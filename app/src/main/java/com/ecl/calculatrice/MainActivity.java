@@ -1,5 +1,8 @@
 package com.ecl.calculatrice;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,74 +13,94 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static String buttonsTextID[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "point", "diviser", "multiplier", "soustraire", "additionner", "res"};
+    private final static String buttonsTextID[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "point", "diviser", "multiplier", "soustraire", "additionner","res"};
     public static ArrayList<Button> buttonsClicked;
+    private final static String buttonsTextIDlandscape[] = {"cos", "sin", "tan", "exp", "ln", "carre"};
+
 
     public static double result;
     private TextView _affichage;
-
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonsClicked = new ArrayList<>();
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
-        result = 0;
-        _affichage = findViewById(R.id.affichage);
-
-
-        for (int i = 0; i < buttonsTextID.length; i++) {
-            final int buttonID = getResources().getIdentifier("button_" + buttonsTextID[i], "id", getPackageName());
-            final Button button = findViewById(buttonID);
-            button.setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.button_sqrt).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onButtonClicked(button);
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+
+                    result = Math.sqrt(result);
+                    _affichage.setText(Double.toString(result));
                 }
             });
         }
 
-        findViewById(R.id.button_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (buttonsClicked.size() > 0) {
-                    String oldText = _affichage.getText().toString();
-                    Button canceledButton = buttonsClicked.get(buttonsClicked.size() - 1);
 
-                    _affichage.setText(oldText.substring(0, oldText.length() - canceledButton.getText().length()));
-                    buttonsClicked.remove(buttonsClicked.size() - 1);
-                }
+            buttonsClicked = new ArrayList<>();
+            result = 0;
+            _affichage = findViewById(R.id.affichage);
+
+            for (int i = 0; i < buttonsTextID.length; i++) {
+                final int buttonID = getResources().getIdentifier("button_" + buttonsTextID[i], "id", getPackageName());
+                final Button button = findViewById(buttonID);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onButtonClicked(button);
+                    }
+                });
             }
-        });
 
+            findViewById(R.id.button_back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (buttonsClicked.size() > 0) {
+                        String oldText = _affichage.getText().toString();
+                        Button canceledButton = buttonsClicked.get(buttonsClicked.size() - 1);
 
-        findViewById(R.id.button_clear).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                _affichage.setText("");
-                buttonsClicked.removeAll(buttonsClicked);
-            }
-        });
-
-        findViewById(R.id.button_result).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calcul calcul = new Calcul(0, buttonsClicked.size());
-
-                try {
-                    result = calcul.getResult();
+                        _affichage.setText(oldText.substring(0, oldText.length() - canceledButton.getText().length()));
+                        buttonsClicked.remove(buttonsClicked.size() - 1);
+                    }
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-                finally {
+            });
+
+
+            findViewById(R.id.button_clear).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    _affichage.setText("");
                     buttonsClicked.removeAll(buttonsClicked);
                 }
+            });
 
-                _affichage.setText(Double.toString(result));
-            }
-        });
+            findViewById(R.id.button_result).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+
+                    _affichage.setText(Double.toString(result));
+                }
+            });
     }
 
     private void onButtonClicked(Button button) {
@@ -105,4 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
         return bool;
     }
+
+
 }

@@ -29,14 +29,14 @@
 
             <Button
                 style="@style/MyButton"
-                android:id="@+id/button_pi"
+                android:id="@+id/button_rad"
                 android:backgroundTint="@android:color/holo_blue_bright"
-                android:text="@string/button_pi"/>
+                android:text="@string/button_rad"/>
             <Button
                 style="@style/MyButton"
-                android:id="@+id/button_brackets"
+                android:id="@+id/button_deg"
                 android:backgroundTint="@android:color/holo_blue_bright"
-                android:text="@string/button_brackets"/>
+                android:text="@string/button_deg"/>
             <Button
                 style="@style/MyButton"
                 android:id="@+id/button_res"
@@ -104,14 +104,14 @@
 
             <Button
                 style="@style/MyButton"
-                android:id="@+id/button_puiss"
-                android:backgroundTint="@android:color/holo_blue_bright"
-                android:text="@string/button_puiss"/>
-            <Button
-                style="@style/MyButton"
                 android:id="@+id/button_tan"
                 android:backgroundTint="@android:color/holo_blue_bright"
                 android:text="@string/button_tan"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_abs"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_abs"/>
 
             <Button
                 style="@style/MyButton"

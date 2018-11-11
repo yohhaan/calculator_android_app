@@ -134,7 +134,7 @@
             android:layout_weight="1">
 
             <Button
-                style="@style/MyButton" />
+                style="@style/MyButton"/>
 
             <Button
                 style="@style/MyButton"
@@ -151,7 +151,6 @@
                 android:id="@+id/button_result"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="@string/button_result"/>
-
         </TableRow>
 
     </TableLayout>

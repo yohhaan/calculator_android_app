@@ -20,13 +20,13 @@
     <string name="button_back">AC</string>
     <string name="button_result">=</string>
     <string name="button_carre">x²</string>
-    <string name="button_cos">cos</string>
-    <string name="button_sin">sin</string>
-    <string name="button_tan">tan</string>
-    <string name="button_sqrt">sqrt</string>
-    <string name="button_exp">e^x</string>
-    <string name="button_ln">ln</string>
-    <string name="button_puiss">x^y</string>
-    <string name="button_pi">π</string>
-    <string name="button_brackets">( )</string>
+    <string name="button_cos">cos(x)</string>
+    <string name="button_sin">sin(x)</string>
+    <string name="button_tan">tan(x)</string>
+    <string name="button_sqrt">sqrt(x)</string>
+    <string name="button_exp">exp(x)</string>
+    <string name="button_ln">ln(x)</string>
+    <string name="button_abs">|x|</string>
+    <string name="button_rad">RAD</string>
+    <string name="button_deg">°</string>
 </resources>
