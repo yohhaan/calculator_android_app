@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/affichage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="parent" />
+
+    <TableLayout
+        android:id="@+id/clavier"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/affichage"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#000000">
+
+        <TableRow
+            android:layout_weight="1">
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_pi"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_pi"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_brackets"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_brackets"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_res"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/button_res" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_back"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/button_back"/>
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_clear"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/button_clear"/>
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_diviser"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_diviser" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1">
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_cos"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_cos"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_sin"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_sin"/>
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_7"
+                android:text="@string/button_7" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_8"
+                android:text="@string/button_8" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_9"
+                android:text="@string/button_9" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_multiplier"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_multiplier" />
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1">
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_puiss"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_puiss"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_tan"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_tan"/>
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_4"
+                android:text="@string/button_4" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_5"
+                android:text="@string/button_5" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_6"
+                android:text="@string/button_6" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_soustraire"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_soustraire" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1">
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_exp"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_exp"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_ln"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_ln"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_1"
+                android:text="@string/button_1" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_2"
+                android:text="@string/button_2" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_3"
+                android:text="@string/button_3" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_additionner"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_additionner" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1">
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_carre"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_carre"/>
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_sqrt"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/button_sqrt"/>
+            <Button
+                style="@style/MyButton" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_0"
+                android:text="@string/button_0" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_point"
+                android:text="@string/button_point" />
+
+            <Button
+                style="@style/MyButton"
+                android:id="@+id/button_result"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/button_result"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Calculatrice</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_0">0</string>
+    <string name="button_point">.</string>
+    <string name="button_additionner">+</string>
+    <string name="button_soustraire">-</string>
+    <string name="button_multiplier">x</string>
+    <string name="button_diviser">/</string>
+    <string name="button_res">Res</string>
+    <string name="button_clear">C</string>
+    <string name="button_back">AC</string>
+    <string name="button_result">=</string>
+    <string name="button_carre">x²</string>
+    <string name="button_cos">cos</string>
+    <string name="button_sin">sin</string>
+    <string name="button_tan">tan</string>
+    <string name="button_sqrt">sqrt</string>
+    <string name="button_exp">e^x</string>
+    <string name="button_ln">ln</string>
+    <string name="button_puiss">x^y</string>
+    <string name="button_pi">π</string>
+    <string name="button_brackets">( )</string>
+</resources>
