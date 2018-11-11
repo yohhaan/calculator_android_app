@@ -1,7 +1,5 @@
 package com.ecl.calculatrice;
 
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,24 +13,20 @@ public class MainActivity extends AppCompatActivity {
 
     private final static String buttonsTextID[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "point", "diviser", "multiplier", "soustraire", "additionner","res"};
     public static ArrayList<Button> buttonsClicked;
-    private final static String buttonsTextIDlandscape[] = {"cos", "sin", "tan", "exp", "ln", "carre"};
-
-
     public static double result;
     private TextView _affichage;
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
-            findViewById(R.id.button_sqrt).setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.button_rad).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Calcul calcul = new Calcul(0, buttonsClicked.size());
-
                     try {
                         result = calcul.getResult();
                     } catch (Exception e) {
@@ -40,8 +34,150 @@ public class MainActivity extends AppCompatActivity {
                     } finally {
                         buttonsClicked.removeAll(buttonsClicked);
                     }
+                    result = result*Math.PI/180;
+                    _affichage.setText(Double.toString(result));
+                }
+            });
 
-                    result = Math.sqrt(result);
+            findViewById(R.id.button_deg).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = result*180/Math.PI;
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_cos).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.cos(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+            findViewById(R.id.button_sin).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.sin(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_tan).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.tan(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_abs).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.abs(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_exp).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.exp(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_ln).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.log(result);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+
+            findViewById(R.id.button_carre).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.pow(result,2);
+                    _affichage.setText(Double.toString(result));
+                }
+            });
+            
+            findViewById(R.id.button_sqrt).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calcul calcul = new Calcul(0, buttonsClicked.size());
+                    try {
+                        result = calcul.getResult();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        buttonsClicked.removeAll(buttonsClicked);
+                    }
+                    result = Math.sqrt( result );
                     _affichage.setText(Double.toString(result));
                 }
             });
